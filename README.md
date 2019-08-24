@@ -1,6 +1,6 @@
 # label-exporter
 
-Export GitHub labels in the form of YAML and JSON.
+Export GitHub labels in the form of YAML, JSON and table.
 
 ## Installation
 
@@ -15,9 +15,10 @@ $ label-exporter --help
 usage: label-exporter [<flags>] <owner> <repo>
 
 Flags:
-      --help  Show context-sensitive help (also try --help-long and --help-man).
-  -y, --yaml  Use the YAML format.
-  -j, --json  Use the JSON format.
+      --help   Show context-sensitive help (also try --help-long and --help-man).
+  -y, --yaml   Use the YAML format.
+  -j, --json   Use the JSON format.
+  -t, --table  Use the table format.
 
 Args:
   <owner>  Owner of the repository.
@@ -58,4 +59,17 @@ $ label-exporter micnncim lable-exporter --json | jq
     "color": "cfd3d7"
   },
 ]
+```
+
+```
+$ label-exporter micnncim lable-exporter --table
++------------------+--------------------------------+--------+
+|       NAME       |          DESCRIPTION           | COLOR  |
++------------------+--------------------------------+--------+
+| bug              | Something isn't working        | d73a4a |
+| documentation    | Improvements or additions to   | 0075ca |
+|                  | documentation                  |        |
+| duplicate        | This issue or pull request     | cfd3d7 |
+|                  | already exists                 |        |
++------------------+--------------------------------+--------+
 ```
