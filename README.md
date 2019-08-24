@@ -1,6 +1,6 @@
 # label-exporter
 
-Export GitHub labels in the form YAML and JSON.
+Export GitHub labels in the form of YAML and JSON.
 
 ## Installation
 
