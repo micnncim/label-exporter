@@ -28,7 +28,7 @@ Args:
 ## Example
 
 ```
-$ label-exporter micnncim lable-exporter --yaml
+$ label-exporter micnncim label-exporter --yaml
 - color: d73a4a
   description: Something isn't working
   name: bug
@@ -41,7 +41,7 @@ $ label-exporter micnncim lable-exporter --yaml
 ```
 
 ```
-$ label-exporter micnncim lable-exporter --json | jq
+$ label-exporter micnncim label-exporter --json | jq
 [
   {
     "name": "bug",
@@ -62,7 +62,7 @@ $ label-exporter micnncim lable-exporter --json | jq
 ```
 
 ```
-$ label-exporter micnncim lable-exporter --table
+$ label-exporter micnncim label-exporter --table
 +------------------+--------------------------------+--------+
 |       NAME       |          DESCRIPTION           | COLOR  |
 +------------------+--------------------------------+--------+
