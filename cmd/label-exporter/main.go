@@ -15,6 +15,7 @@ var (
 	repo  = kingpin.Arg("repo", "Repository whose wanted labels.").Required().String()
 	yaml  = kingpin.Flag("yaml", "Use the YAML format.").Short('y').Bool()
 	json  = kingpin.Flag("json", "Use the JSON format.").Short('j').Bool()
+	table = kingpin.Flag("table", "Use the table format.").Short('t').Bool()
 )
 
 func main() {
@@ -40,6 +41,15 @@ func main() {
 
 	if *json {
 		b, err := exporter.LabelsToJSON(labels)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(string(b))
+		return
+	}
+
+	if *table {
+		b, err := exporter.LabelsToTable(labels)
 		if err != nil {
 			log.Fatal(err)
 		}
