@@ -57,7 +57,7 @@ $ label-exporter micnncim label-exporter --json | jq
     "name": "duplicate",
     "description": "This issue or pull request already exists",
     "color": "cfd3d7"
-  },
+  }
 ]
 ```
 
