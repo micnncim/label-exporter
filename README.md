@@ -4,13 +4,23 @@ Export GitHub labels in the form of YAML, JSON and table.
 
 ## Installation
 
+Create a personal access token with `public_repo` scope at 
+https://github.com/settings/tokens/new and:
+
+```console
+$ export GITHUB_TOKEN=enter_the_token_here
 ```
+
+Then either download a binary release from 
+https://github.com/micnncim/label-exporter/releases or:
+
+```console
 $ go get github.com/micnncim/label-exporter/cmd/label-exporter
 ```
 
 ## Usage
 
-```
+```console
 $ label-exporter --help
 usage: label-exporter [<flags>] <owner> <repo>
 
@@ -27,7 +37,7 @@ Args:
 
 ## Example
 
-```
+```console
 $ label-exporter micnncim label-exporter --yaml
 - color: d73a4a
   description: Something isn't working
@@ -40,7 +50,7 @@ $ label-exporter micnncim label-exporter --yaml
   name: duplicate
 ```
 
-```
+```console
 $ label-exporter micnncim label-exporter --json | jq
 [
   {
@@ -61,7 +71,7 @@ $ label-exporter micnncim label-exporter --json | jq
 ]
 ```
 
-```
+```console
 $ label-exporter micnncim label-exporter --table
 +------------------+--------------------------------+--------+
 |       NAME       |          DESCRIPTION           | COLOR  |
