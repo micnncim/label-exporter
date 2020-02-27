@@ -1,0 +1,27 @@
+builds:
+- main: ./cmd/label-exporter
+  env:
+  - CGO_ENABLED=0
+  - GO111MODULE=on
+  goos:
+    - linux
+    - darwin
+  goarch:
+    - 386
+    - amd64
+    - arm
+    - arm64
+before:
+  hooks:
+    - go mod download
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^Fix'
+    - '^Refactor'
+
